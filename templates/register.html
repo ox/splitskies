@@ -1,12 +1,22 @@
 {{ template "main" . }}
 
+{{ define "header" }}
+<div class="px-8 pt-4 flex flex-row flex-nowrap justify-between">
+  <div>
+    <p class="italic text-2xl underline-offset-4 font-semibold">
+      Welcome, to Splitskies
+    </p>
+  </div>
+</div>
+{{ end }}
+
 {{ define "content" }}
-<div class="my-8 ring-1 ring-inset ring-sky-200 bg-white w-fit p-6 shadow-md shadow-sky-100 rounded-md mx-auto">
+<div class="px-8 py-8">
   <div>
     {{.Flash}}
   </div>
   <div>
-    <h3>You look new here! Create a username to get started.</h3>
+    <h3 class="mb-4">You look new here! Create a username to get started.</h3>
     <form action="/register" method="POST">
       <input type="text" name="username" placeholder="xXDancerXBabeX212Xx" required>
       <input type="submit" value="Register" class="button-md">
