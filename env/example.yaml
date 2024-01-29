@@ -1,0 +1,12 @@
+app:
+  log_level: debug
+  bind: localhost:7077
+  public: ./public
+
+db:
+  path: ./db.sqlite
+
+twilio:
+  account_sid: ACXXXXXXXXXXXXXXXXXXXXXXXX
+  auth_token: XXXXXXXXXXXXXXXXXXXXXXXX
+  verify_services_sid: VAXXXXXXXXXXXXXXXXXXXXXXXX
