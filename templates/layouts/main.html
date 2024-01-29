@@ -1,0 +1,51 @@
+{{ define "main" }}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Splitskies{{ block "title-extra" . }}{{ end }}</title>
+  <link rel="stylesheet" href="/public/css/index.css">
+
+  <meta name="title" content="Splitskies{{ block " title-extra" . }}{{ end }}">
+  <meta name="description"
+    content="Easily split trip expenses with friends and foes.">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://splitskies.artem.fans/">
+  <meta property="og:title" content="Splitskies{{ block " title-extra" . }}{{ end }}">
+  <meta property="og:description"
+    content="Easily split trip expenses with friends and foes.">
+  <!-- <meta property="og:image" content="https://splitskies.artem.fans/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png"> -->
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://splitskies.artem.fans/">
+  <meta property="twitter:title" content="Splitskies{{ block " title-extra" . }}{{ end }}">
+  <meta property="twitter:description"
+    content="Easily split trip expenses with friends and foes.">
+  <!-- <meta property="twitter:image" content="https://splitskies.artem.fans/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png"> -->
+
+</head>
+
+<body class="bg-zinc-100">
+  <div class="flex flex-col md:max-w-5xl xl:mx-auto">
+    <header>
+      {{ block "header" . }}{{end}}
+    </header>
+
+    <main class="flex-1">
+      {{ template "content" . }}
+    </main>
+    
+    <footer>
+      {{ block "footer" . }}{{ end }}
+    </footer>
+  </div>
+</body>
+
+</html>
+{{ end }}

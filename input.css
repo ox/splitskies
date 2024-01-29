@@ -1,0 +1,15 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+/*
+This config is stupid. tailwind can't have both imports and styles in the same file? Styles added after
+the fonts import just don't show up in the compiled styles. tailwindcss v3.4.1
+*/
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import "./fonts.css";
+@import "./app.css";

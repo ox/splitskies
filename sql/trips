@@ -1,0 +1,28 @@
+-- database: ../db.sqlite
+
+-- Use the ▷ button in the top right corner to run the entire file.
+
+with usertrips as (
+		select trip_id from trip_participants where user_id = 'SRFRARIO'
+	) select * from trips where trips.id in usertrips;
+
+insert into trips (id, name) values ('D37LBNAL', 'Birthday house');
+insert into trips (id, name) values ('6SM9W6H6', 'Spain trip');
+
+insert into trip_participants(user_id, trip_id) values ('SRFRARIO', '6SM9W6H6');
+
+-- Adminito: SRFRARIO
+
+-- IDs to use: JCBR4F4P, SKCD7OA4, GTMW1BJ3, 37MZOKHU, NXWVK2BI,
+--             UVOUJNWL, Z5FM5WTW, EFUDIPI3, RMVA4FUG, UR07QW3T, RSX0D9A9,
+--             BY2OJME7, WDR40U5G, Q8DMCZY2, MY6HEQ82
+
+insert into expenses(id, name, owner_id, owner_cost_cents, trip_id)
+	values ('R5GUO67Q', 'Cal Pep Dinner', 'SRFRARIO', 12000, '6SM9W6H6');
+
+-- with 
+
+
+select user_id, expense_id, cost_cents, users.username
+	from expense_participants, users
+	where expense_id = 'R5GUO67Q' and user_id = users.id;

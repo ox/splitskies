@@ -1,0 +1,16 @@
+Journal
+
+Credit loses cash, debit increases it. Credit and debit
+should cancel out when transactions are correctly entered.
+
+Journal
+
+User    ExpenseID   Credit  Debit
+A       1           66
+B       1                   33
+C       1                   33
+
+Expenses
+
+ID      Description User    Cost
+1       Dinner      A       100

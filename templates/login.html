@@ -1,0 +1,26 @@
+{{ template "main" . }}
+
+{{ define "content" }}
+<div class="my-8 ring-1 ring-inset ring-sky-200 bg-white w-fit p-6 shadow-md shadow-sky-100 rounded-md mx-auto">
+  <form action="/login" method="post">
+    <div>
+      <p class="pb-4 text-center">Login with your phone number</p>
+      <div class="flex flex-row flex-nowrap">
+        <div>
+          <div class="bg-slate-100 rounded-sm text-sm py-1 px-1 mt-[3px] mr-1 flex items-center">+1 🇺🇸</div>
+        </div>
+        <div class="flex flex-col">
+          <input name="phone" type="tel" autocomplete="tel" maxlength="10" minlength="10" pattern="[0-9]{3}[0-9]{3}[0-9]{4}"></input>
+          <div class="italic text-slate-700 text-sm ml-1">XXXYYYZZZZ</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex mt-4 justify-center">
+      <input type="submit" value="Login" class="button-md">
+    </div>
+  </form>
+</div>
+{{ end }}
+
+{{ define "title-extra" }} — Login{{ end }}

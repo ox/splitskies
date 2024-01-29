@@ -1,0 +1,19 @@
+{{ template "main" . }}
+
+{{ define "content" }}
+<div class="my-8 ring-1 ring-inset ring-sky-200 bg-white w-fit p-6 shadow-md shadow-sky-100 rounded-md mx-auto">
+  <div>
+    {{.Flash}}
+  </div>
+  <div>
+    <h3>You look new here! Create a username to get started.</h3>
+    <form action="/register" method="POST">
+      <input type="text" name="username" placeholder="xXDancerXBabeX212Xx" required>
+      <input type="submit" value="Register" class="button-md">
+    </form>
+  </div>
+</div>
+
+{{ end }}
+
+{{ define "title-extra" }} — Register{{ end }}

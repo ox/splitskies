@@ -1,0 +1,41 @@
+{{ template "main" . }}
+
+{{ define "header" }}
+<div class="px-8 pt-4 flex flex-row flex-nowrap justify-between">
+  <div>
+    <p class="italic text-2xl underline-offset-4 font-semibold">{{ .WelcomePhrase }}</p>
+  </div>
+  <div>
+    <p class="italic text-2xl">{{.Username}}</p>
+  </div>
+</div>
+{{ end }}
+
+{{ define "content" }}
+<div class="p-8">
+  <h1 class="text-lg font-semibold">Your Trips</h1>
+  <div class="tabular">
+    <table class="table-auto border-collapse text-left w-full">
+      <thead>
+        <th class="border-y border-gray-800">ID</th>
+        <th class="border-y border-gray-800">Name</th>
+        <th class="border-y border-gray-800">Started</th>  
+        <th class="border-y border-gray-800">Ended</th>
+      </thead>
+      <tbody>
+        {{ range .Trips }}
+          <tr>
+            <td>{{ .ID }}</td>
+            <td><a href="/app/trips/{{.ID}}">{{ .Name }}</a></td>
+            <td>{{ .TimeSinceStart }}</td>
+            <td>{{ if ne .FinishedAt nil }}{{ .FinishedAt }}{{ else }}NO{{ end }}</td>
+          </tr>
+        {{ end }}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+{{ end }}
+
+{{ define "title-extra" }} — Home{{ end }}

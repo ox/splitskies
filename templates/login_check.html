@@ -1,0 +1,16 @@
+{{ template "main" . }}
+
+{{ define "content" }}
+<div class="my-8 ring-1 ring-inset ring-sky-200 bg-white w-fit p-6 shadow-md shadow-sky-100 rounded-md mx-auto">
+  <div>
+    {{.Flash}}
+  </div>
+  <form action="/login/check" method="POST" class="flex flex-col">
+    <label class="font-semibold text-sm mb-1">Verification code</label>
+    <input type="text" name="code" placeholder="123456" maxlength="6" required>
+    <input type="submit" value="Verify" class="button-md mt-4">
+  </form>
+</div>
+{{ end }}
+
+{{ define "title-extra" }} — Verify{{ end }}

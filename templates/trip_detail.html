@@ -1,0 +1,54 @@
+{{ template "main" . }}
+
+{{ define "header" }}
+<div class="px-8 pt-4 flex flex-row flex-nowrap justify-between">
+  <div>
+    <p class="italic text-2xl underline-offset-4 font-semibold">
+      <a href="/app">Splitskies</a><span>/</span>{{ .Trip.Name }}</p>
+  </div>
+  <div>
+    <p class="italic text-2xl">{{.Username}}</p>
+  </div>
+</div>
+{{ end }}
+
+{{ define "content" }}
+<div class="p-8">
+  <div class="flex justify-between items-center">
+    <h1 class="text-lg font-semibold">Expenses</h1>
+    <div>
+      <button class="hover:cursor-pointer">Add Expense</button>
+    </div>
+  </div>
+  <div class="tabular border-t border-gray-800">
+    <div class="table text-left w-full">
+      <div class="hidden sm:table-row">
+        <div class="font-semibold border-b border-gray-800 table-col">ID</div>
+        <div class="font-semibold border-b border-gray-800 table-col">By</div>
+        <div class="font-semibold border-b border-gray-800 table-col">For</div>
+        <div class="font-semibold border-b border-gray-800 table-col">Date</div>  
+        <div class="font-semibold border-b border-gray-800 table-col">Cost</div>
+      </div>
+
+      {{ range .Expenses }}
+        <div class="flex-col border-b border-gray-800 sm:table-row sm:flex-row sm:border-0">
+          <div class="sm:table-col">
+            <span class="text-gray-800 font-semibold sm:hidden">ID: </span>{{ .ID }}</div>
+          <div class="sm:table-col">
+            <span class="text-gray-800 font-semibold sm:hidden">By: </span>{{ .OwnerUsername }}</div>
+          <div class="sm:table-col">
+            <span class="text-gray-800 font-semibold sm:hidden">For: </span>{{ .Name }}</div>
+          <div class="sm:table-col">
+            <span class="text-gray-800 font-semibold sm:hidden">Date: </span>{{ .Date }}</div>
+          <div class="sm:table-col">
+            <span class="text-gray-800 font-semibold sm:hidden">Cost: </span>{{ .Cost }}</div>
+        </div>
+      {{ end }}
+
+    </div>
+  </div>
+</div>
+
+{{ end }}
+
+{{ define "title-extra" }} — Home{{ end }}
